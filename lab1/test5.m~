@@ -1,0 +1,4 @@
+q0 = [0 0 0 0];
+xd = [100 100 1200 0];
+qd = ikine(q0, xd);
+xt = fkine(qd)

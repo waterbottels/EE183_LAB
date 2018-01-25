@@ -1,0 +1,19 @@
+function J = Jacob(qi, dx)
+% qi, dx is 4x1
+% dx = (xd-x0) / N
+% set dq = dx, and see how x changes WRT dq
+% Jacboian = change of x / dq
+dq = dx;
+tq = qi;
+D = []
+for i=1:4
+    tq(i) = tq(i)+dq;
+    T = fkine(tq)-fkine(tq+dx);
+    D = [D T(1:3,4)/dq]
+J = D*Q
+% J = inv(J.'*J) * J.'
+J = inv(J.'*J)
+
+end
+
+
