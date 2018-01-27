@@ -4,7 +4,7 @@ function q = ikine(q0, xd)
 qd = q0;
 com = 0;
 condition = true;
-n = 1e4;
+n = 1e5;
 i = 0;
 while condition
     A = fkine(qd); % compute the current positional state of end effector
